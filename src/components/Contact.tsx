@@ -1,5 +1,6 @@
 import { Mail, Download, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
+import resumePDF from '../assets/resume (1).pdf';
 
 const Contact = () => {
   return (
@@ -18,21 +19,21 @@ const Contact = () => {
           <div className="glass-card p-8 md:p-12">
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <Button variant="hero" size="lg" asChild>
-                <a href="mailto:navaneeth@example.com">
+                <a href="mailto:navaneethraj.mec@gmail.com">
                   <Mail className="w-5 h-5" />
                   Email Me
                 </a>
               </Button>
               
               <Button variant="heroOutline" size="lg" asChild>
-                <a href="#" download>
+                <a  href={resumePDF} target="_blank" rel="noopener noreferrer">
                   <Download className="w-5 h-5" />
                   Download Resume
                 </a>
               </Button>
               
               <Button variant="heroOutline" size="lg" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/navaneeth-raj-a68703292/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5" />
                   Connect With Me
                 </a>

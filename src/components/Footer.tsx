@@ -1,10 +1,9 @@
 import { Mail, Github, Linkedin, Instagram } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Mail, href: 'mailto:navaneeth@example.com', label: 'Email' },
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+  { icon: Mail, href: 'mailto:navaneethraj.mec@gmail.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/Navaneeth-18bit', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/navaneeth-raj-a68703292/', label: 'LinkedIn' },
 ];
 
 const Footer = () => {
