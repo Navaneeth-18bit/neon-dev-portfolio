@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const projects = [
   {
@@ -25,15 +26,17 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   const handleViewProject = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <section id="projects" className="py-24 px-6 relative">
+    <section id="projects" className="py-24 px-6 relative" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className={`mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Projects</span>
           </h2>
@@ -44,10 +47,11 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border p-6 hover:border-primary/50 transition-all duration-300"
+              className={`group relative overflow-hidden rounded-2xl bg-card border border-border p-6 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               {/* Gradient Background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50`} />

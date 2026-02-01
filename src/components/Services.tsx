@@ -1,4 +1,5 @@
 import { Code, Layout, Palette } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const services = [
   {
@@ -22,11 +23,13 @@ const services = [
 ];
 
 const Services = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 });
+
   return (
-    <section className="py-24 px-6 relative">
+    <section className="py-24 px-6 relative" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             What I <span className="gradient-text">Offer</span>
           </h2>
@@ -40,8 +43,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="glass-card p-8 group hover:border-primary/30 transition-all duration-500 hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`glass-card p-8 group hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               {/* Icon */}
               <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 ${
