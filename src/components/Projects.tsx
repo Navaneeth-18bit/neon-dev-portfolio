@@ -5,25 +5,21 @@ const projects = [
   {
     title: 'Study Planner Bot',
     tag: 'Personal',
+    status: 'Completed',
     description: 'An intelligent study planner bot leveraging natural language processing principles to help students organize their learning schedules effectively.',
     gradient: 'from-accent/20 to-secondary/20',
     tagColor: 'bg-accent/20 text-accent-foreground',
+    statusColor: 'bg-green-500/20 text-green-500',
     githubUrl: '#'
-  },
-  {
-    title: 'BookMyTurf',
-    tag: 'College Project',
-    description: 'A turf booking platform where users can browse available slots and make reservations.',
-    gradient: 'from-primary/20 to-accent/20',
-    tagColor: 'bg-primary/20 text-primary',
-    githubUrl: 'https://github.com/Navaneeth-18bit/Book-My-Turf.git'
   },
   {
     title: 'Event Registration System',
     tag: 'Mini Project',
+    status: 'In Progress',
     description: 'A simple and efficient portal for students to register for events and view event details.',
     gradient: 'from-secondary/20 to-primary/20',
     tagColor: 'bg-secondary/20 text-secondary',
+    statusColor: 'bg-yellow-500/20 text-yellow-500',
     githubUrl: 'https://github.com/Navaneeth-18bit/Event-Registration-System.git'
   }
 ];
@@ -58,9 +54,14 @@ const Projects = () => {
               
               {/* Content */}
               <div className="relative z-10">
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${project.tagColor} mb-4`}>
-                  {project.tag}
-                </span>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${project.tagColor}`}>
+                    {project.tag}
+                  </span>
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${project.statusColor}`}>
+                    {project.status}
+                  </span>
+                </div>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
