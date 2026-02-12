@@ -7,14 +7,7 @@ const projects = [{
   gradient: 'from-primary/20 to-accent/20',
   tagColor: 'bg-primary/20 text-primary',
   githubUrl: 'https://github.com/Navaneeth-18bit/Book-My-Turf.git'
-}, {
-  title: 'Event Registration System',
-  tag: 'Mini project',
-  description: 'A simple and efficient portal for students to register for events and view event details.',
-  gradient: 'from-secondary/20 to-primary/20',
-  tagColor: 'bg-secondary/20 text-secondary',
-  githubUrl: 'https://github.com/Navaneeth-18bit/Event-Registration-System.git'
-}];
+}]
 const Projects = () => {
   const handleViewProject = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');

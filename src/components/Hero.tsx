@@ -8,9 +8,6 @@ const Hero = () => {
         <div className="max-w-3xl">
           {/* Tag */}
           <div className="inline-block mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <span className="glass-card px-4 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-              Full-Stack Web Developer
-            </span>
           </div>
 
           {/* Main Heading */}
@@ -20,7 +17,7 @@ const Hero = () => {
           >
             Hi, I'm <span className="gradient-text">Navaneeth</span> 👋
             <br />
-            <span className="text-foreground">I build web experiences.</span>
+            <span className="text-foreground">I am passionate in coding.</span>
           </h1>
 
           {/* Subtitle */}
@@ -28,7 +25,7 @@ const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground mb-4 animate-fade-in"
             style={{ animationDelay: '0.3s' }}
           >
-            I'm a Web Developer specializing in modern websites, clean UI, and responsive web apps.
+            I'm a Computer science student specializing in GenAi, modern websites, clean UI, and responsive web apps.
           </p>
 
           {/* Description */}
