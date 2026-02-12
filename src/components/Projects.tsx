@@ -1,22 +1,51 @@
-import { ArrowUpRight } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { ArrowUpRight } from 'lucide-react'; // Make sure to run: npm install lucide-react
 import { Button } from './ui/button';
-const projects = [{
-  title: 'BookMyTurf',
-  tag: 'CollegeProject',
-  description: 'A turf booking platform where users can browse available slots and make reservations.',
-  gradient: 'from-primary/20 to-accent/20',
-  tagColor: 'bg-primary/20 text-primary',
-  githubUrl: 'https://github.com/Navaneeth-18bit/Book-My-Turf.git'
-}, {
-  title: 'Event Registration System',
-  tag: 'Mini project',
-  description: 'A simple and efficient portal for students to register for events and view event details.',
-  gradient: 'from-secondary/20 to-primary/20',
-  tagColor: 'bg-secondary/20 text-secondary',
-  githubUrl: 'https://github.com/Navaneeth-18bit/Event-Registration-System.git'
-}];
+
+const projects = [
+  {
+    title: 'BookMyTurf',
+    tag: 'CollegeProject',
+    description:
+      'A turf booking platform where users can browse available slots and make reservations.',
+    gradient: 'from-primary/20 to-accent/20',
+    tagColor: 'bg-primary/20 text-primary',
+    githubUrl: 'https://github.com/Navaneeth-18bit/Book-My-Turf.git',
+  },
+  {
+    title: 'Event Registration System',
+    tag: 'Mini project',
+    description:
+      'A simple and efficient portal for students to register for events and view event details.',
+    gradient: 'from-secondary/20 to-primary/20',
+    tagColor: 'bg-secondary/20 text-secondary',
+    githubUrl: 'https://github.com/Navaneeth-18bit/Event-Registration-System.git',
+  },
+];
+
+// Simple scroll animation hook
+const useScrollAnimation = (threshold = 0.1) => {
+  const ref = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [threshold]);
+
+  return { ref, isVisible };
+};
+
 const Projects = () => {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref, isVisible } = useScrollAnimation(0.1);
 
   const handleViewProject = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -26,7 +55,11 @@ const Projects = () => {
     <section id="projects" className="py-24 px-6 relative" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className={`mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`mb-16 transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Projects</span>
           </h2>
@@ -40,36 +73,36 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative overflow-hidden rounded-2xl bg-card border border-border p-6 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`group relative overflow-hidden rounded-2xl bg-card border border-border p-6 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
               style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50`} />
-              
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50`}
+              />
+
               {/* Content */}
               <div className="relative z-10">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${project.tagColor}`}>
+                  <span
+                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${project.tagColor}`}
+                  >
                     {project.tag}
-                  </span>
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${project.statusColor}`}>
-                    {project.status}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-6">
-                  {project.description}
-                </p>
+                <p className="text-muted-foreground text-sm mb-6">{project.description}</p>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => handleViewProject(project.githubUrl)}
-                  className="group/btn"
                 >
                   View Project
-                  <ArrowUpRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Button>
               </div>
 
