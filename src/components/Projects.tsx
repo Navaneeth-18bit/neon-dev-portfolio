@@ -4,13 +4,13 @@ import { Button } from './ui/button';
 
 const projects = [
   {
-    title: 'BookMyTurf',
-    tag: 'CollegeProject',
+    title: 'Study Planner ChatBot',
+    tag: 'personal project',
     description:
-      'A turf booking platform where users can browse available slots and make reservations.',
+      'A study Planner chatbot can help students plan their study schedule and manage their time effectively.',
     gradient: 'from-primary/20 to-accent/20',
     tagColor: 'bg-primary/20 text-primary',
-    githubUrl: 'https://github.com/Navaneeth-18bit/Book-My-Turf.git',
+    githubUrl: 'https://github.com/Navaneeth-18bit/Study-Planner-AI-chatbot.git',
   },
   {
     title: 'Event Registration System',

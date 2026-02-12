@@ -17,7 +17,7 @@ const About = () => {
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               I'm <span className="text-foreground font-semibold">Navaneeth</span>, a passionate Web Developer currently in my{' '}
               <span className="text-primary">3rd year of B.Tech</span>. I enjoy building clean interfaces, 
-              solving real-world problems with code, and constantly learning modern web technologies.
+              solving real-world problems with code, and constantly learning modern web technologies. I also trying to learn GenAi and chatbot building.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mt-6">
               I aim to deliver <span className="text-foreground">professional, optimized, and visually appealing</span> websites 
