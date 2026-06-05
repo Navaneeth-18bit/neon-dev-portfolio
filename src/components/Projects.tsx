@@ -4,6 +4,15 @@ import { Button } from './ui/button';
 
 const projects = [
   {
+    title: 'SketchFlow',
+    tag: 'Internship project',
+    description:
+      'A web-based application that uses pretrained AI which redraws a sketches of hand-drawn diagrams thus helping teachers saving time in preparing Notes..',
+    gradient: 'from-primary/20 to-accent/20',
+    tagColor: 'bg-primary/20 text-primary',
+    githubUrl: 'https://github.com/Navaneeth-18bit/Sketch-Flow',
+  },
+  {
     title: 'Study Planner ChatBot',
     tag: 'personal project',
     description:
