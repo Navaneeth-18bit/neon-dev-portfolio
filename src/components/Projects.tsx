@@ -12,6 +12,16 @@ const projects = [
     tagColor: 'bg-primary/20 text-primary',
     githubUrl: 'https://github.com/Navaneeth-18bit/Study-Planner-AI-chatbot.git',
   },
+    {
+    title: 'DriveMate',
+    tag: 'Internship project',
+    description:
+      'A platform that connects users with drivers for various transportation needs.',
+    gradient: 'from-primary/20 to-accent/20',
+    tagColor: 'bg-primary/20 text-primary',
+    githubUrl: 'https://github.com/Navaneeth-18bit/DriveMate.git',
+  },
+
   {
     title: 'Event Registration System',
     tag: 'Mini project',
