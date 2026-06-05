@@ -21,6 +21,7 @@ const projects = [
     tagColor: 'bg-primary/20 text-primary',
     githubUrl: 'https://github.com/Navaneeth-18bit/DriveMate.git',
   },
+  
 
   {
     title: 'Event Registration System',
@@ -31,6 +32,15 @@ const projects = [
     tagColor: 'bg-secondary/20 text-secondary',
     githubUrl: 'https://github.com/Navaneeth-18bit/Event-Registration-System.git',
   },
+  {
+    title: 'Movie Website',
+    tag: 'Personal project',
+    description:
+      'A responsive website for browsing and discovering movies with detailed information and reviews.',
+    gradient: 'from-accent/20 to-primary/20',
+    tagColor: 'bg-accent/20 text-accent',
+    githubUrl: 'https://github.com/Navaneeth-18bit/Movie-web-app.git',
+  }
 ];
 
 // Simple scroll animation hook
