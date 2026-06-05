@@ -39,14 +39,22 @@ This is my personal portfolio website developed to showcase my skills, projects,
      
 **Installation**
 
-```
+
 1. Clone the repository
+
+```
 git clone https://github.com/yourusername/portfolio-website.git
-2. Navigate to the project directory
+```
+3. Navigate to the project directory
+```
 cd portfolio-website
-3. Install dependencies
+```
+4. Install dependencies
+```
 npm install
-4. Start the development server
+```
+5. Start the development server
+```
 npm start
 ```
 
