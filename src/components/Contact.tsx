@@ -14,9 +14,7 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             <span className="gradient-text">Get in Touch</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-12">
-            Have a project in mind or want to collaborate? Let's talk!
-          </p>
+
 
           {/* Contact Card */}
           <div className={`glass-card p-8 md:p-12 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
